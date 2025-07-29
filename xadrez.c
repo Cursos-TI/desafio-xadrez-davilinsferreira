@@ -23,7 +23,7 @@ int main () {
     }
 
     // Rainha
-    printf("\nMovimentação da rainha:\n");
+    printf("\nMovimentação da Rainha:\n");
 
     int k = 1;
     // Move a rainha 8 casas para a esquerda
@@ -32,6 +32,20 @@ int main () {
         printf("Esquerda\n");
         k++;
     } while (k <= 8);
+    
+    // Cavalo
+    printf("\nMovimentação do Cavalo:\n");
+
+    int l = 1;
+    // Move o cavalo 2 casas para baixo e uma para a esquerda
+    while (l--)
+    {
+        for (int m = 0; m < 2; m++)
+        {
+            printf("Baixo\n");
+        }
+        printf("Esquerda\n");
+    }
     
     return 0;
 }
