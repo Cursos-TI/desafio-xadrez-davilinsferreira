@@ -1,51 +1,71 @@
 #include <stdio.h>
 
+void moverTorre (int casas) {
+    if (casas > 0)
+    {
+        printf("Direita\n");
+        moverTorre(casas - 1);
+    }
+}
+
+void moverBispo (int casas) {
+    for (int vertical = 1; vertical <= casas; vertical++)
+    {
+        for (int horizontal = 1; horizontal <= casas; horizontal++)
+        {
+            if (vertical == horizontal)
+            {
+                printf("Cima\n");
+                printf("Direita\n");
+            }
+        }
+    } 
+}
+
+void moverRainha (int casas) {
+    if (casas > 0)
+    {
+        printf("Esquerda\n");
+        moverRainha(casas - 1);
+    }
+}
+
+void moverCavalo () {
+    for (int vertical = 0; vertical <= 2; vertical++)
+    {
+        for (int horizontal = 0; horizontal <= 1; horizontal++)
+        {
+            if (vertical == 2 && horizontal == 1)
+            {
+                printf("Cima\n");
+                printf("Cima\n");
+                printf("Direita\n");
+            }
+        }
+    }
+}
+
 int main () {
     
     // Torre
     printf("Movimentação da Torre:\n");
-    // Move a Torre 5 casa para a direita
-    for (int i = 0; i < 5; i++)
-    {
-        printf("Direita\n");
-    }
+    // Move a Torre 5 casas para a direita
+    moverTorre(5);
 
     // Bispo
     printf("\nMovimentação do Bispo:\n");
-
-    int j = 1;
     // Move o Bispo 5 casas na diagonal para cima e à direita
-    while (j <= 5)
-    {
-        printf("Cima\n");
-        printf("Direita\n");
-        j++;
-    }
+    moverBispo(5);
 
     // Rainha
     printf("\nMovimentação da Rainha:\n");
-
-    int k = 1;
     // Move a rainha 8 casas para a esquerda
-    do
-    {
-        printf("Esquerda\n");
-        k++;
-    } while (k <= 8);
+    moverRainha(8);
     
     // Cavalo
     printf("\nMovimentação do Cavalo:\n");
-
-    int l = 1;
-    // Move o cavalo 2 casas para baixo e uma para a esquerda
-    while (l--)
-    {
-        for (int m = 0; m < 2; m++)
-        {
-            printf("Baixo\n");
-        }
-        printf("Esquerda\n");
-    }
+    // Move o cavalo duas casas para cima e 1 para a direita
+    moverCavalo();
     
     return 0;
 }
